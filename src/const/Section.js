@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import Products from '../section/Products';
 import Detail from '../section/Detail';
 import { Route } from "react-router-dom"
+import "./section.css";
 
 class Section extends Component {
     render() {
         return (
             <div>
-                <section>
+                <section className="Section">
                     <Route path="/product" component={Products} exact />
                     <Route path="/product/:id" component={Detail} />
                     {/* <Route path="/Detail" component={Detail}></Route> */}
