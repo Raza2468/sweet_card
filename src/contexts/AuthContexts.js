@@ -46,16 +46,28 @@ class DataProvider extends Component {
         ],
         cart: []
     }
-    
+
     addCart = (id) => {
         const { products, cart } = this.state;
-        const data = products.filter(product => {
+        const cheak = cart.every(item => {
             return (
-                product._id === id
+                item._id !== id
             )
         })
-        this.setState({cart: [...cart,...data]})
-        console.log(data)
+        if (cheak) {
+
+            const data = products.filter(product => {
+                return (
+                    product._id === id
+                )
+            })
+            this.setState({ cart: [...cart, ...data] })
+            console.log(data)
+
+        }else{
+            alert("The product has been added cart.")
+        }
+
     }
 
     render() {

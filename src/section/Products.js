@@ -8,10 +8,11 @@ import "./product.css"
 
 
 class Products extends Component {
+    
     static contextType = DataContext;
     render() {
-        const { products } = this.contextType
-        return (
+        const { products } = this.context
+                return (
             <div id="product">
 
                 {
