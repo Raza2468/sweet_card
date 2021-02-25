@@ -1,17 +1,23 @@
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap'
 import "./Banner.css"
+import { DataContext } from '../contexts/AuthContexts'
 // import Section from '../const/Section'
 
-function Banner() {
-    return (
-        <div>
-            <br />
+import React, { Component } from 'react'
+
+ class Banner extends Component {
+    static contextType = DataContext
+    render() {
+        const { cart } = this.context
+        return (
+            <div>
+                 <br />
             {/* <Card> */}
                 <div className="nav-cart">
 
                     <Link to="/cart">
-                        <span>0</span>
+                        <span>{cart.length}</span>
                         <i class="fa fa-shopping-cart" ></i>
                     </Link>
 {/* <Section /> */}
@@ -19,10 +25,20 @@ function Banner() {
                 {/* <h1>Banner</h1> */}
 
             {/* </Card> */}
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 export {
     Banner
 }
+
+// function Banner() {
+//     return (
+//         <div>
+           
+//         </div>
+//     )
+// }
+

@@ -14,7 +14,7 @@ class Header extends Component {
     render() {
         return (
             <div className="header fixed flex aic">
-                <div className="logo"><a href="#"><img src="https://cdn2.iconfinder.com/data/icons/mixd/512/23_OLX-512.png" height="40px" width="50px" /></a> </div>
+                <div className="logo"><a href="#"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/sweet-candy-logo.png" height="50px" width="60px" /></a> </div>
 
                 <div className="location rel flex aic">
                     <div className="fa fa-search ico s24" />

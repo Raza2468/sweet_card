@@ -1,6 +1,12 @@
 import React from 'react'
 import { Component } from 'react';
 import { DataContext } from '../contexts/AuthContexts'
+import { Link } from 'react-router-dom'
+import { Colors } from './Colors'
+import "./Detail.css"
+
+
+
 
 class Detail extends Component {
     static contextType = DataContext
@@ -34,9 +40,15 @@ class Detail extends Component {
                         <div className="box">
                             <div className="row">
                                 <h2>{item.title}</h2>
-                            </div>
                                 <span>${item.price}</span>
-                                <p>{item.description}</p>
+                            </div>
+                            {/* <span>${item.colors}</span> */}
+                            <Colors colors={item.colors}/>
+                            <p>{item.description}</p>
+
+                            <Link to="/cart" className="cart">
+                                Add to Cart
+                                </Link>
                         </div>
                     </div>
                 )

@@ -9,44 +9,61 @@ class DataProvider extends Component {
         products: [
             {
                 "_id": "1",
-                "title": "Chamchm",
+                "title": "Chamchm 01",
                 "src": "https://cdn.pixabay.com/photo/2014/12/22/12/33/sweets-577230__340.jpg",
-                "description": "welcom you Sweet",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, dolores nesciunt debitis repudiandae, nihil aperiam itaque in repellat explicabo minus beatae, aut magni ut? Ea animi nisi ex quam.",
+                "colors": ["orange", "red", "green", "blue"],
                 "price": 750,
                 "count": 1
             },
             {
                 "_id": "2",
-                "title": "Mix",
+                "title": "Mix 02",
                 "src": "https://image.shutterstock.com/image-photo/mix-mithai-260nw-308679107.jpg",
-                "description": "welcom you Sweet",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, dolores nesciunt debitis repudiandae, nihil aperiam itaque in repellat explicabo minus beatae, aut magni ut? Ea animi nisi ex quam.",
+                "colors": ["orange", "red", "green", "blue"],
                 "price": 750,
                 "count": 2
             },
             {
                 "_id": "3",
-                "title": "Lucha",
+                "title": "Lucha 03",
                 "src": "https://i.pinimg.com/originals/0f/08/21/0f082122f9dd0bc4a61ca90ca9438998.jpg",
-                "description": "welcom you Sweet",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, dolores nesciunt debitis repudiandae, nihil aperiam itaque in repellat explicabo minus beatae, aut magni ut? Ea animi nisi ex quam.",
+                "colors": ["orange", "red", "green", "blue"],
                 "price": 750,
                 "count": 3
             },
             {
                 "_id": "4",
-                "title": "Cake",
+                "title": "Cake 04",
                 "src": "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/317/317257/cupcakes.jpg?w=1155&h=1541",
-                "description": "welcom you Sweet",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt qui, dolores nesciunt debitis repudiandae, nihil aperiam itaque in repellat explicabo minus beatae, aut magni ut? Ea animi nisi ex quam.",
+                "colors": ["orange", "red", "green", "blue"],
                 "price": 750,
                 "count": 4
             },
-        ]
+        ],
+        cart: []
+    }
+    
+    addCart = (id) => {
+        const { products, cart } = this.state;
+        const data = products.filter(product => {
+            return (
+                product._id === id
+            )
+        })
+        this.setState({cart: [...cart,...data]})
+        console.log(data)
     }
 
     render() {
-        const { products } = this.state;
+        const { products, cart } = this.state;
+        const { addCart } = this;
         return (
 
-            <DataContext.Provider value={{ products }}>
+            <DataContext.Provider value={{ products, addCart, cart }}>
                 {this.props.children}
             </DataContext.Provider>
 

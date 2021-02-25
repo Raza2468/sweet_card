@@ -1,3 +1,4 @@
+import { ListItemSecondaryAction } from '@material-ui/core';
 import React from 'react'
 import { Component } from 'react';
 import { contextType } from 'react-modal';
@@ -9,7 +10,7 @@ import "./product.css"
 class Products extends Component {
     static contextType = DataContext;
     render() {
-        const { products } = this.context
+        const { products } = this.contextType
         return (
             <div id="product">
 
@@ -26,7 +27,9 @@ class Products extends Component {
                                 </h3>
                                 <span>${product.price}</span>
                                 <p>{product.description}</p>
-                                <button>Add to Cart</button>
+                                <p>{product.colors}</p>
+
+                                <button onClick={()=> this.context.addCart(product._id)}>Add to Cart</button>
                             </div>
 
                         </div>

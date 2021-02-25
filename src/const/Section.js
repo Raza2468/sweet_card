@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Products from '../section/Products';
 import Detail from '../section/Detail';
 import { Route } from "react-router-dom"
+import { Cart } from '../section/Cart'
 import "./section.css";
 
 class Section extends Component {
@@ -12,7 +13,7 @@ class Section extends Component {
                 <section className="Section">
                     <Route path="/product" component={Products} exact />
                     <Route path="/product/:id" component={Detail} />
-                    {/* <Route path="/Detail" component={Detail}></Route> */}
+                    <Route path="/cart" component={Cart}></Route>
                 </section>
             </div >
         )

@@ -33,7 +33,7 @@ class Home extends Component {
                     </div>
                     <div>
                         {/* Card */}
-                        <MultiCard />
+                        {/* <MultiCard /> */}
                         <Section />
                         {/* <h1>x</h1> */}
                     </div>
